@@ -1,12 +1,22 @@
-# Pose2Carton 
+# 三维人体模型之人体姿态迁移 
 
-EE228 课程大作业，利用3D骨架控制3D卡通人物。
+EE228 课程大作业，利用3D骨架控制3D卡通人物。了解3D视觉中数据表征和3D软件使用、3D人体模型SMPL；将给定的人体姿态迁移到3D卡通人物上，根据3D动画模型中的关节点定义(joint definition)和 SMPL的关节点定义进行匹配。
 
 
 
-# Maya 环境配置
+# 实验基本原理
 
-这里请简单描述你配置Maya环境的过程。
+常见的3D数据形式: 
+（1）fbx (保存了物体顶点，纹理，动力学信息(方便动画制作))；
+（2）obj (保存了物体顶点(vertex)的位置信息)；
+（3）txt文件标注了3D模型的关节点(joints)名称及坐标。
+
+代码实现：
+（1）transfer.py是关节点匹配主函数。其中，每一对配对i:j,表示待匹配模型的关节点i对应给定模型的关节点j，一一对应，至少10个，至多取决于待匹配模型关节点数。
+'manual_model_to_smpl = {0:0,1:1,2:2,3:3,4:4,5:5,6:6,7:7,8:8,9:9,10:10}'
+（2）vis.py实现可视化，输出匹配结果.pkl，将匹配情况存为图像和mp4。
+'#transfer_one_frame("samples/Ch14_nonPBR.txt", use_online_model=True)
+transfer_one_sequence("fbx/7527.txt", "info_seq_5.pkl", use_online_model=False)'
 
 
 
