@@ -54,7 +54,7 @@ line96 | visualizer.capture_screen_image(vis_save_path, True)
 
 # 项目结果
 
-这里放置来自你最终匹配结果的截图， 如
+待匹配模型以7527.fbx为例：
 
 ![image](../img/80.png)
 
